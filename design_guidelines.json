@@ -1,0 +1,171 @@
+{
+  "project_name": "FlowForge Scheduler",
+  "domain": "Enterprise SaaS / DevOps Platform",
+  "version": "1.0",
+  "theme": "dark_and_light",
+  "archetype": "Archetype 4: Swiss & High-Contrast (Precision Tech)",
+  "vibe": "Technical, precise, authoritative, high-performance",
+  "typography": {
+    "fonts": {
+      "heading": "Outfit",
+      "body": "Manrope",
+      "mono": "JetBrains Mono"
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl font-medium tracking-tight text-foreground",
+      "h2": "text-2xl sm:text-3xl font-medium tracking-tight text-foreground",
+      "h3": "text-xl font-medium tracking-tight text-foreground",
+      "h4": "text-lg font-medium tracking-tight text-foreground",
+      "body": "text-sm sm:text-base text-muted-foreground leading-relaxed",
+      "label_overline": "text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground",
+      "code": "font-mono text-sm tracking-tight"
+    },
+    "font_imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');"
+    ]
+  },
+  "colors": {
+    "light_mode": {
+      "background": "#FAFAFA",
+      "foreground": "#0A0A0A",
+      "card": "#FFFFFF",
+      "card_foreground": "#0A0A0A",
+      "popover": "#FFFFFF",
+      "popover_foreground": "#0A0A0A",
+      "primary": "#FF5A00",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#F4F4F5",
+      "secondary_foreground": "#18181B",
+      "muted": "#F4F4F5",
+      "muted_foreground": "#71717A",
+      "accent": "#F4F4F5",
+      "accent_foreground": "#18181B",
+      "destructive": "#EF4444",
+      "destructive_foreground": "#FAFAFA",
+      "border": "#E4E4E7",
+      "input": "#E4E4E7",
+      "ring": "#FF5A00",
+      "status": {
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444",
+        "info": "#3B82F6",
+        "running": "#3B82F6",
+        "queued": "#8B5CF6"
+      }
+    },
+    "dark_mode": {
+      "background": "#09090B",
+      "foreground": "#FAFAFA",
+      "card": "#121214",
+      "card_foreground": "#FAFAFA",
+      "popover": "#121214",
+      "popover_foreground": "#FAFAFA",
+      "primary": "#FF5A00",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#27272A",
+      "secondary_foreground": "#FAFAFA",
+      "muted": "#27272A",
+      "muted_foreground": "#A1A1AA",
+      "accent": "#27272A",
+      "accent_foreground": "#FAFAFA",
+      "destructive": "#EF4444",
+      "destructive_foreground": "#FAFAFA",
+      "border": "#27272A",
+      "input": "#27272A",
+      "ring": "#FF5A00",
+      "status": {
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444",
+        "info": "#3B82F6",
+        "running": "#3B82F6",
+        "queued": "#8B5CF6"
+      }
+    }
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "p-4, p-6, p-8, p-12",
+    "dashboard_grid": "grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6",
+    "bento_grid": "grid-cols-1 md:grid-cols-12 gap-6",
+    "sidebar_width": "w-64",
+    "radius": {
+      "card": "0.5rem",
+      "button": "0.375rem",
+      "input": "0.375rem"
+    },
+    "borders": "1px solid var(--border)",
+    "surfaces": {
+      "glassmorphism": "bg-background/70 backdrop-blur-xl border border-border/50",
+      "cards": "bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow",
+      "neo_brutalist_table": "border-collapse border border-border [&_td]:border-b [&_td]:border-border [&_th]:border-b [&_th]:border-border"
+    }
+  },
+  "components": {
+    "navigation": {
+      "type": "Animated Sidebar",
+      "behavior": "Collapsible on mobile, fixed on desktop with Cmd+K command palette trigger",
+      "active_state": "bg-primary/10 text-primary font-medium border-r-2 border-primary"
+    },
+    "kpi_cards": {
+      "style": "Flat card, 1px border, large number typography (text-3xl font-heading font-medium tracking-tight)",
+      "layout": "Top-left focused. Title top-left, Value center-left, Sparkline/Trend bottom-right",
+      "motion": "Animated counter for numbers (e.g., framer-motion useSpring)"
+    },
+    "tables": {
+      "library": "TanStack Table + Shadcn UI",
+      "features": "Sticky header, pagination, row hover states (hover:bg-muted/50), status chips (badges)",
+      "density": "Compact (py-2 px-4) for maximum data visibility"
+    },
+    "charts": {
+      "library": "Recharts or Shadcn Charts",
+      "style": "Area charts with gradient fill, line charts with tension for timeline. Tooltips must be custom HTML/Tailwind styling.",
+      "colors": "Use status colors (success, error, running) for semantic data, primary for general metrics."
+    },
+    "forms_and_inputs": {
+      "style": "Shadcn UI base. Focus rings must be ring-2 ring-primary ring-offset-background."
+    },
+    "job_details_view": {
+      "layout": "Split pane: Left side (60%) for Logs & JSON payload, Right side (40%) for Metadata, Status Timeline, Worker Assignment",
+      "log_viewer": "font-mono text-sm bg-[#0A0A0A] text-gray-300 p-4 rounded-md border border-border overflow-x-auto"
+    }
+  },
+  "motion_and_interactions": {
+    "page_transitions": "Fade in with subtle slide up (y: 10 to 0, opacity: 0 to 1, duration: 0.3s)",
+    "hover_states": "Cards lift slightly (-translate-y-0.5), borders brighten",
+    "micro_interactions": "Button active scale (0.97), Toast notification slide-in from bottom-right",
+    "loading_states": "Skeleton screens matching exact component dimensions, NEVER use basic spinners for full page loads",
+    "empty_states": "Dashed border containers (border-dashed border-2) with muted icon and clear CTA button"
+  },
+  "icons": {
+    "library": "lucide-react",
+    "stroke_width": 1.5,
+    "sizing": "w-4 h-4 for inline, w-5 h-5 for sidebar, w-8 h-8 for empty states"
+  },
+  "media": {
+    "backgrounds": {
+      "gradient_mesh_dark": "https://images.unsplash.com/photo-1671159593357-ee577a598f71",
+      "usage": "Use as a fixed background layer with low opacity (10-15%) in dark mode for texture behind the main UI."
+    },
+    "illustrations": {
+      "code_terminal": "https://images.unsplash.com/photo-1625838144804-300f3907c110",
+      "usage": "Can be used in auth pages (split screen right side) with an overlay to maintain text readability."
+    }
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure text over gradient meshes meets 4.5:1 contrast. Use backdrop-blur and semi-transparent backgrounds to ensure legibility.",
+    "keyboard": "Full keyboard support required (Cmd+K for command palette, standard focus rings).",
+    "testing": "All interactive elements (buttons, inputs, tabs, table rows, chart tooltips) MUST have data-testid attributes."
+  },
+  "instructions_to_main_agent": [
+    "Initialize React app with Tailwind CSS and Shadcn UI.",
+    "Install framer-motion, lucide-react, recharts, and @tanstack/react-table.",
+    "Set up CSS variables for light and dark themes as defined in colors.",
+    "Build the animated sidebar layout.",
+    "Implement the Dashboard with KPI cards using animated counters.",
+    "Build the Jobs data table with filtering and pagination.",
+    "Implement the Job Details page with a mock JSON payload viewer and streaming log terminal UI.",
+    "Add Cmd+K command palette functionality.",
+    "Ensure all interactive elements have data-testid attributes."
+  ]
+}
