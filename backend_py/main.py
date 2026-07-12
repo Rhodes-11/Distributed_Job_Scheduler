@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
@@ -15,9 +17,17 @@ load_dotenv()
 
 app = FastAPI(title='PulseQueue API', version='0.1.0')
 
+# Wildcard origins ('*') are not allowed by browsers when allow_credentials=True.
+# Set CORS_ORIGINS as a comma-separated list of allowed origins in your environment,
+# e.g. CORS_ORIGINS=https://distributed-job-scheduler-xi.vercel.app
+_cors_origins_env = os.environ.get('CORS_ORIGINS', '')
+allowed_origins = [o.strip() for o in _cors_origins_env.split(',') if o.strip()] or [
+    'http://localhost:3000',
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['*'],
