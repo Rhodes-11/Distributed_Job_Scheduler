@@ -2,10 +2,10 @@ import os
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from fastapi.security import OAuth2PasswordBearer
-from ..lib.auth import AuthError, hash_password, issue_refresh_token, revoke_refresh_token, rotate_refresh_token, sign_access_token, verify_password
-from ..lib.db import get_db
-from ..lib.deps import get_current_user
-from ..lib.schemas import LoginPayload, RegisterPayload, TokenResponse, UserOut
+from lib.auth import AuthError, hash_password, issue_refresh_token, revoke_refresh_token, rotate_refresh_token, sign_access_token, verify_password
+from lib.db import get_db
+from lib.deps import get_current_user
+from lib.schemas import LoginPayload, RegisterPayload, TokenResponse, UserOut
 
 router = APIRouter()
 

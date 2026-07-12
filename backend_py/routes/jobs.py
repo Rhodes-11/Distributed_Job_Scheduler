@@ -2,10 +2,10 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from typing import Optional
 from datetime import datetime, timedelta
 from croniter import croniter
-from ..lib.db import get_db
-from ..lib.deps import get_current_user
-from ..lib.schemas import JobCreatePayload
-from ..lib.utils import now
+from lib.db import get_db
+from lib.deps import get_current_user
+from lib.schemas import JobCreatePayload
+from lib.utils import now
 
 router = APIRouter()
 

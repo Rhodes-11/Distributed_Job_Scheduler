@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
-from ..lib.db import get_db
-from ..lib.deps import get_current_user
+from lib.db import get_db
+from lib.deps import get_current_user
 
 router = APIRouter()
 

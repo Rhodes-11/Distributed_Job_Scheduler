@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from typing import Optional
-from ..lib.db import get_db
-from ..lib.deps import get_current_user
-from ..lib.schemas import QueueCreatePayload, QueuePatchPayload
-from ..lib.utils import slugify, now
+from lib.db import get_db
+from lib.deps import get_current_user
+from lib.schemas import QueueCreatePayload, QueuePatchPayload
+from lib.utils import slugify, now
 
 router = APIRouter()
 

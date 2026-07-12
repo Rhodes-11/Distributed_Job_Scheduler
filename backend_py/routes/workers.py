@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
-from ..lib.db import get_db
-from ..lib.deps import get_current_user
-from ..lib.utils import now
+from lib.db import get_db
+from lib.deps import get_current_user
+from lib.utils import now
 
 router = APIRouter()
 
