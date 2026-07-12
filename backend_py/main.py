@@ -1,15 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from .routes.auth import router as auth_router
-from .routes.projects import router as projects_router
-from .routes.queues import router as queues_router
-from .routes.jobs import router as jobs_router
-from .routes.workers import router as workers_router
-from .routes.analytics import router as analytics_router
-from .routes.dlq import router as dlq_router
-from .routes.health import router as health_router
-from .lib.db import init_db
+from routes.auth import router as auth_router
+from routes.projects import router as projects_router
+from routes.queues import router as queues_router
+from routes.jobs import router as jobs_router
+from routes.workers import router as workers_router
+from routes.analytics import router as analytics_router
+from routes.dlq import router as dlq_router
+from routes.health import router as health_router
+from lib.db import init_db
 
 load_dotenv()
 
