@@ -99,8 +99,9 @@ Realtime channel: `Socket.IO` at `/api/socket.io` (events: `job:created`, `job:u
 Use `/` to access the public PulseQueue landing page before signing in.
 
 ```bash
-# PostgreSQL + Redis must be running on defaults (5432, 6379)
-# Container already has them installed.
+# Local development uses SQLite by default via backend/.env.
+# For production or heavier workloads, switch Prisma to PostgreSQL by changing the datasource provider in backend/prisma/schema.prisma and pointing DATABASE_URL to your Postgres instance.
+# Redis is still expected for the worker and queue orchestration features.
 
 # Backend
 cd backend && yarn install && yarn prisma db push && yarn dev &
