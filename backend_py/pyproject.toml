@@ -1,0 +1,20 @@
+[project]
+name = "pulsequeue-backend"
+version = "0.1.0"
+description = "PulseQueue backend rewritten in Python with FastAPI and MongoDB."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[project.dependencies]
+fastapi = "^0.118.0"
+"uvicorn[standard]" = "^0.23.0"
+pydantic = "^2.7.0"
+"python-jose[cryptography]" = "^3.2.0"
+"passlib[bcrypt]" = "^1.7.5"
+"motor" = "^4.4.0"
+"python-dotenv" = "^1.0.0"
+"python-multipart" = "^0.0.6"
+"python-jose" = "^3.2.0"
+
+[project.scripts]
+start = "uvicorn backend_py.main:app --host 0.0.0.0 --port 8001 --reload"

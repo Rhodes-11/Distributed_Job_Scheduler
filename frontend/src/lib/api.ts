@@ -33,9 +33,9 @@ api.interceptors.response.use(
         refreshInFlight = api
           .post('/auth/refresh')
           .then((r) => {
-            const t = r.data.accessToken as string;
-            setAccessToken(t);
-            return t;
+            const t = (r.data.accessToken ?? r.data.access_token) as string | undefined;
+            if (t) setAccessToken(t);
+            return t ?? null;
           })
           .catch(() => null)
           .finally(() => {

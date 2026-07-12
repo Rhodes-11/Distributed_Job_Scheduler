@@ -24,19 +24,19 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     api
       .get('/auth/me')
-      .then((r) => setUser(r.data.user))
+      .then((r) => setUser(r.data.user ?? r.data.me ?? null))
       .catch(() => setUser(null));
   }, []);
 
   const login = async (email: string, password: string) => {
     const r = await api.post('/auth/login', { email, password });
-    setAccessToken(r.data.accessToken);
-    setUser(r.data.user);
+    setAccessToken(r.data.accessToken ?? r.data.access_token ?? null);
+    setUser(r.data.user ?? r.data.me ?? null);
   };
   const register = async (email: string, password: string, name: string) => {
     const r = await api.post('/auth/register', { email, password, name });
-    setAccessToken(r.data.accessToken);
-    setUser(r.data.user);
+    setAccessToken(r.data.accessToken ?? r.data.access_token ?? null);
+    setUser(r.data.user ?? r.data.me ?? null);
   };
   const logout = async () => {
     await api.post('/auth/logout').catch(() => undefined);

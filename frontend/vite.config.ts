@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  const backend = env.VITE_BACKEND_URL || env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+  const backend = env.VITE_BACKEND_URL || env.REACT_APP_BACKEND_URL || 'http://127.0.0.1:8000';
   return {
     plugins: [react()],
     resolve: {
